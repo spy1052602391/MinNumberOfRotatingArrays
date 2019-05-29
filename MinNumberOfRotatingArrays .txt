@@ -1,0 +1,22 @@
+
+import java.util.ArrayList;
+class Solution {
+    public int minNumberInRotateArray(int [] array) {
+        int newstart = 0;
+        int newend = array.length-1;
+        while( (newend - newstart)!=1){
+            int start = newstart;
+            int end = newend;
+            int mid = (start + end)>>1;
+            if (array[mid] >= array[start]) {
+                newstart = mid;
+            } else if(array[mid] <= array[end]){
+                newend = mid;
+            }
+        }
+        return array[newend];
+    }
+}
+
+public class Main {
+}
